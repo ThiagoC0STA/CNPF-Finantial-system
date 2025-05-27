@@ -21,7 +21,6 @@ Este projeto é inspirado em dashboards modernos e profissionais, com sidebar es
 - **Frontend**
 
   - Next.js 14
-  - Material-UI (MUI)
   - Zustand (Gerenciamento de Estado)
   - React Icons
   - Recharts/Chart.js (Visualização de Dados)

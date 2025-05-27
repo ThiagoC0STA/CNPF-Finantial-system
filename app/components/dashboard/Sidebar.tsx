@@ -32,7 +32,7 @@ export default function Sidebar() {
   const active = "/dashboard"; // TODO: usePathname() para navegação real
 
   return (
-    <aside className="hidden md:flex flex-col justify-between w-64 min-h-screen bg-[#F0F9F4] border-r border-[#E2F3E8] py-6 px-4 dark:bg-[#032514] dark:border-[#032514]">
+    <aside className="hidden md:flex flex-col justify-between w-64 min-h-screen bg-[#fff] border-r border-[#E2F3E8] py-6 px-4 dark:bg-[#000d06] dark:border-[#032514]">
       {/* Topo: Logo e nome */}
       <div>
         <div className="flex items-center gap-3 mb-8 px-2">

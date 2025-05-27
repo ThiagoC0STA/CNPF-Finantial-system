@@ -14,7 +14,7 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
       storageKey="cnpf-theme"
       {...props}
     >
-      {children}    
+      {children}
     </NextThemesProvider>
   );
 }
