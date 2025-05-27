@@ -5,6 +5,7 @@ Um sistema moderno e intuitivo para gerenciamento financeiro pessoal, desenvolvi
 ## 🚀 Tecnologias
 
 - **Frontend**
+
   - Next.js 14
   - Material-UI (MUI)
   - Zustand (Gerenciamento de Estado)
@@ -25,12 +26,14 @@ Um sistema moderno e intuitivo para gerenciamento financeiro pessoal, desenvolvi
 ## ✨ Funcionalidades
 
 ### 1. Autenticação e Usuários
+
 - Login/Registro
 - Perfil do usuário
 - Recuperação de senha
 - Login social (Google/GitHub)
 
 ### 2. Dashboard
+
 - Visão geral do mês
 - Saldo total
 - Resumo de entradas/saídas
@@ -41,6 +44,7 @@ Um sistema moderno e intuitivo para gerenciamento financeiro pessoal, desenvolvi
   - Previsões
 
 ### 3. Gestão de Transações
+
 - Registro de receitas e despesas
 - Categorização automática
 - Upload de comprovantes
@@ -48,18 +52,21 @@ Um sistema moderno e intuitivo para gerenciamento financeiro pessoal, desenvolvi
 - Importação de extratos
 
 ### 4. Categorias e Orçamentos
+
 - Categorias personalizáveis
 - Orçamentos mensais
 - Alertas de limite
 - Sugestões de economia
 
 ### 5. Metas Financeiras
+
 - Definição de metas
 - Acompanhamento de progresso
 - Cálculo de economia mensal
 - Notificações
 
 ### 6. Relatórios
+
 - Relatórios detalhados
 - Exportação (PDF/Excel)
 - Análise de gastos
@@ -67,6 +74,7 @@ Um sistema moderno e intuitivo para gerenciamento financeiro pessoal, desenvolvi
 - Previsões
 
 ### 7. Recursos Adicionais
+
 - Múltiplas contas
 - Suporte a moedas
 - Backup automático
@@ -136,23 +144,27 @@ goals
 ## 🛠️ Configuração do Ambiente
 
 1. Clone o repositório
+
 ```bash
 git clone [url-do-repositorio]
 ```
 
 2. Instale as dependências
+
 ```bash
 yarn install
 ```
 
 3. Configure as variáveis de ambiente
-Crie um arquivo `.env.local` na raiz do projeto:
+   Crie um arquivo `.env.local` na raiz do projeto:
+
 ```env
 NEXT_PUBLIC_SUPABASE_URL=sua_url_do_supabase
 NEXT_PUBLIC_SUPABASE_ANON_KEY=sua_chave_anonima_do_supabase
 ```
 
 4. Inicie o servidor de desenvolvimento
+
 ```bash
 yarn dev
 ```
@@ -160,6 +172,7 @@ yarn dev
 ## 📱 Interface
 
 O sistema possui uma interface moderna e responsiva, com:
+
 - Design intuitivo
 - Gráficos interativos
 - Animações suaves
@@ -200,3 +213,11 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 [Seu Nome] - [seu-email@exemplo.com]
 
 Link do Projeto: [https://github.com/seu-usuario/seu-repositorio](https://github.com/seu-usuario/seu-repositorio)
+
+## 🎨 Referência Visual
+ ˝
+Este projeto foi inspirado no seguinte design do Dribbble:
+
+- [Project Dashboard by QClay](https://dribbble.com/shots/24003091-Project-Dashboard)
+
+A proposta visual é de um dashboard moderno, escuro, com sidebar fixa, cards arredondados, gráficos interativos e tipografia clean, seguindo o estilo apresentado na referência acima.
