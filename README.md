@@ -1,36 +1,202 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sistema de Planejamento Financeiro
 
-## Getting Started
+Um sistema moderno e intuitivo para gerenciamento financeiro pessoal, desenvolvido com Next.js, Material-UI, Zustand e Supabase.
 
-First, run the development server:
+## 🚀 Tecnologias
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Frontend**
+  - Next.js 14
+  - Material-UI (MUI)
+  - Zustand (Gerenciamento de Estado)
+  - React Icons
+  - Recharts/Chart.js (Visualização de Dados)
+  - React Query
+  - React Hook Form
+  - Zod
+
+- **Backend**
+  - Supabase
+    - Autenticação
+    - Banco de Dados PostgreSQL
+    - Storage
+    - Edge Functions
+    - Realtime
+
+## ✨ Funcionalidades
+
+### 1. Autenticação e Usuários
+- Login/Registro
+- Perfil do usuário
+- Recuperação de senha
+- Login social (Google/GitHub)
+
+### 2. Dashboard
+- Visão geral do mês
+- Saldo total
+- Resumo de entradas/saídas
+- Gráficos interativos
+  - Evolução do saldo
+  - Distribuição de gastos
+  - Comparativo mensal
+  - Previsões
+
+### 3. Gestão de Transações
+- Registro de receitas e despesas
+- Categorização automática
+- Upload de comprovantes
+- Transações recorrentes
+- Importação de extratos
+
+### 4. Categorias e Orçamentos
+- Categorias personalizáveis
+- Orçamentos mensais
+- Alertas de limite
+- Sugestões de economia
+
+### 5. Metas Financeiras
+- Definição de metas
+- Acompanhamento de progresso
+- Cálculo de economia mensal
+- Notificações
+
+### 6. Relatórios
+- Relatórios detalhados
+- Exportação (PDF/Excel)
+- Análise de gastos
+- Comparativos
+- Previsões
+
+### 7. Recursos Adicionais
+- Múltiplas contas
+- Suporte a moedas
+- Backup automático
+- Tema escuro/claro
+- Notificações
+- Lembretes
+
+## 📊 Estrutura do Banco de Dados
+
+```sql
+-- Tabelas principais
+users
+  - id
+  - email
+  - name
+  - created_at
+  - avatar_url
+
+accounts
+  - id
+  - user_id
+  - name
+  - type
+  - balance
+  - currency
+
+transactions
+  - id
+  - user_id
+  - account_id
+  - category_id
+  - amount
+  - type (income/expense)
+  - description
+  - date
+  - receipt_url
+  - is_recurring
+  - recurring_frequency
+
+categories
+  - id
+  - user_id
+  - name
+  - type
+  - color
+  - icon
+
+budgets
+  - id
+  - user_id
+  - category_id
+  - amount
+  - period
+  - start_date
+  - end_date
+
+goals
+  - id
+  - user_id
+  - name
+  - target_amount
+  - current_amount
+  - deadline
+  - status
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Configuração do Ambiente
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone o repositório
+```bash
+git clone [url-do-repositorio]
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Instale as dependências
+```bash
+yarn install
+```
 
-## Learn More
+3. Configure as variáveis de ambiente
+Crie um arquivo `.env.local` na raiz do projeto:
+```env
+NEXT_PUBLIC_SUPABASE_URL=sua_url_do_supabase
+NEXT_PUBLIC_SUPABASE_ANON_KEY=sua_chave_anonima_do_supabase
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. Inicie o servidor de desenvolvimento
+```bash
+yarn dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📱 Interface
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+O sistema possui uma interface moderna e responsiva, com:
+- Design intuitivo
+- Gráficos interativos
+- Animações suaves
+- Layout adaptativo
+- Tema claro/escuro
 
-## Deploy on Vercel
+## 🔒 Segurança
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Autenticação segura via Supabase
+- Proteção de rotas
+- Validação de dados
+- Sanitização de inputs
+- HTTPS
+- Proteção contra CSRF
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📈 Funcionalidades Premium
+
+- Relatórios avançados
+- Múltiplas contas
+- Exportação de dados
+- Backup automático
+- Suporte prioritário
+
+## 🤝 Contribuição
+
+1. Faça um Fork do projeto
+2. Crie uma Branch para sua Feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a Branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## 📝 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## 📧 Contato
+
+[Seu Nome] - [seu-email@exemplo.com]
+
+Link do Projeto: [https://github.com/seu-usuario/seu-repositorio](https://github.com/seu-usuario/seu-repositorio)
