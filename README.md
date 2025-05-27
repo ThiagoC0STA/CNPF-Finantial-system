@@ -1,6 +1,20 @@
 # Sistema de Planejamento Financeiro
 
-Um sistema moderno e intuitivo para gerenciamento financeiro pessoal, desenvolvido com Next.js, Material-UI, Zustand e Supabase.
+Este projeto é inspirado em dashboards modernos e profissionais, com sidebar escura, cards claros, gráficos coloridos e visual limpo, responsivo e acessível. O sistema terá suporte a light e dark mode.
+
+## 🎨 Referência Visual
+
+- [Dashboard Inspiration - Siohioma (Dribbble)](https://dribbble.com/shots/24003091-Project-Dashboard)
+
+## ✨ Características do Design
+
+- Sidebar escura (verde) com logo, seções separadas, ícones modernos, badges e avatar do usuário
+- Conteúdo principal com cards brancos, bordas arredondadas, sombra leve
+- Gráficos de barras e pizza com cores do tema (verde, amarelo, laranja)
+- Tipografia clara, espaçamento generoso, responsividade
+- Hierarquia visual clara: valores grandes, descrições pequenas, títulos em negrito
+- Cores de status: verde para positivo, vermelho para negativo, amarelo para atenção
+- Botão de alternância de tema (light/dark) no rodapé da sidebar
 
 ## 🚀 Tecnologias
 
@@ -14,6 +28,9 @@ Um sistema moderno e intuitivo para gerenciamento financeiro pessoal, desenvolvi
   - React Query
   - React Hook Form
   - Zod
+  - shadcn/ui
+  - Tailwind CSS
+  - next-themes (para dark/light mode)
 
 - **Backend**
   - Supabase
@@ -171,13 +188,7 @@ yarn dev
 
 ## 📱 Interface
 
-O sistema possui uma interface moderna e responsiva, com:
-
-- Design intuitivo
-- Gráficos interativos
-- Animações suaves
-- Layout adaptativo
-- Tema claro/escuro
+O sistema terá uma interface moderna, responsiva, com suporte a light e dark mode, e experiência de usuário premium.
 
 ## 🔒 Segurança
 
@@ -213,11 +224,3 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 [Seu Nome] - [seu-email@exemplo.com]
 
 Link do Projeto: [https://github.com/seu-usuario/seu-repositorio](https://github.com/seu-usuario/seu-repositorio)
-
-## 🎨 Referência Visual
- ˝
-Este projeto foi inspirado no seguinte design do Dribbble:
-
-- [Project Dashboard by QClay](https://dribbble.com/shots/24003091-Project-Dashboard)
-
-A proposta visual é de um dashboard moderno, escuro, com sidebar fixa, cards arredondados, gráficos interativos e tipografia clean, seguindo o estilo apresentado na referência acima.
