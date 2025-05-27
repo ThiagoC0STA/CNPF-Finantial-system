@@ -2,9 +2,6 @@
 
 import BalanceCard from "../components/dashboard/BalanceCard";
 import Header from "../components/dashboard/Header";
-import IndicatorsCard from "../components/dashboard/IndicatorsCard";
-import InfoCard from "../components/dashboard/InfoCard";
-import Sidebar from "../components/dashboard/Sidebar";
 import IncomeCard from "../components/dashboard/IncomeCard";
 import ExpenseCard from "../components/dashboard/ExpenseCard";
 import BudgetCard from "../components/dashboard/BudgetCard";
@@ -15,8 +12,6 @@ import TransactionsTable from "../components/dashboard/TransactionsTable";
 export default function DashboardPage() {
   return (
     <div className="min-h-screen flex bg-zinc-950">
-      <Sidebar />
-
       <div className="flex-1 flex flex-col min-h-screen">
         <Header />
 

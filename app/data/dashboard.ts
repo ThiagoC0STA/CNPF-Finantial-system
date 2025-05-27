@@ -2,6 +2,7 @@ export const user = {
   name: "Julio Cesar",
   avatar: "https://randomuser.me/api/portraits/men/1.jpg",
   email: "julio@example.com",
+  
 };
 
 export const wallets = [

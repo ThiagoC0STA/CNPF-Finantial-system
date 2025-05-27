@@ -2,9 +2,9 @@
 
 Este projeto é inspirado em dashboards modernos e profissionais, com sidebar escura, cards claros, gráficos coloridos e visual limpo, responsivo e acessível. O sistema terá suporte a light e dark mode.
 
-## 🎨 Referência Visual
+## 🎨 Referência Visualte
 
-- [Dashboard Inspiration - Siohioma (Dribbble)](https://dribbble.com/shots/24003091-Project-Dashboard)
+- [Dashboard Inspiration - Siohioma (Dribbble)](https://dribbble.com/shots/24604163-Personal-Finance-Dashboard)
 
 ## ✨ Características do Design
 
