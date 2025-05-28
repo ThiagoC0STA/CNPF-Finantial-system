@@ -20,6 +20,7 @@ import { useRequest } from "@/app/lib/request";
 import { useSuccessModal } from "@/app/components/SuccessModalProvider";
 import { useErrorModal } from "@/app/components/ErrorModalProvider";
 import { InputPassword } from "@/app/components/ui/input-password";
+import { useUser } from "@/app/components/UserContext";
 
 const steps = [
   { label: "Dados" },
@@ -33,6 +34,7 @@ export default function LoginPage() {
   const { request } = useRequest();
   const { showSuccess } = useSuccessModal();
   const { showError } = useErrorModal();
+  const { setUser } = useUser();
   const [isRegistering, setIsRegistering] = useState(false);
   const [step, setStep] = useState(0);
   const [selectedProfile, setSelectedProfile] = useState("");
@@ -95,6 +97,7 @@ export default function LoginPage() {
             data: userData,
           });
           if (res.success) {
+            setUser(res.user || null);
             showSuccess("Cadastro realizado com sucesso!");
             setIsRegistering(false);
             setStep(0);
@@ -129,7 +132,9 @@ export default function LoginPage() {
         data: { email, password },
       });
       if (res.success) {
-        router.push("/");
+        setUser(res.user || null);
+        showSuccess("Login realizado com sucesso!");
+        setTimeout(() => router.push("/dashboard"), 1000);
       } else {
         showError(res.error || "Erro ao fazer login");
       }

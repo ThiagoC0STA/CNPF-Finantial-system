@@ -7,6 +7,8 @@ import SuccessModalProvider from "./components/SuccessModalProvider";
 import ErrorModalProvider from "./components/ErrorModalProvider";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { UserProvider } from "./components/UserContext";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -55,19 +57,21 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <LoadingProvider>
-          <ErrorModalProvider>
-            <SuccessModalProvider>
-              <ThemeProvider
-                attribute="class"
-                defaultTheme="system"
-                enableSystem
-              >
-                {children}
-              </ThemeProvider>
-            </SuccessModalProvider>
-          </ErrorModalProvider>
-        </LoadingProvider>
+        <UserProvider>
+          <LoadingProvider>
+            <ErrorModalProvider>
+              <SuccessModalProvider>
+                <ThemeProvider
+                  attribute="class"
+                  defaultTheme="system"
+                  enableSystem
+                >
+                  {children}
+                </ThemeProvider>
+              </SuccessModalProvider>
+            </ErrorModalProvider>
+          </LoadingProvider>
+        </UserProvider>
 
         <Analytics />
         <SpeedInsights />

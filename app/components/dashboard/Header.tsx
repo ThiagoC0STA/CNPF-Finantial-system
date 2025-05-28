@@ -1,6 +1,6 @@
 import { useTheme } from "next-themes";
 import Image from "next/image";
-import { user } from "../../data/dashboard";
+import { useUser } from "../UserContext";
 import {
   FaHome,
   FaExchangeAlt,
@@ -11,6 +11,7 @@ import {
   FaComments,
   FaChevronDown,
 } from "react-icons/fa";
+import { useState } from "react";
 
 const navItems = [
   { href: "/", icon: <FaHome size={16} />, label: "Dashboard" },
@@ -22,8 +23,17 @@ const navItems = [
   { href: "/goals", icon: <FaBullseye size={16} />, label: "Metas" },
 ];
 
+function getInitials(name?: string | null) {
+  if (!name) return "?";
+  const parts = name.trim().split(" ");
+  if (parts.length === 1) return parts[0][0].toUpperCase();
+  return (parts[0][0] + parts[1][0]).toUpperCase();
+}
+
 export default function Header() {
   const { theme, setTheme } = useTheme();
+  const { user, logout } = useUser();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <nav className="w-full bg-white dark:bg-[#181818] flex items-center px-6 py-2 min-h-[64px] z-50 border-b border-zinc-200 dark:border-zinc-800">
@@ -96,23 +106,46 @@ export default function Header() {
           <FaBell size={18} />
           <span className="absolute top-1 right-1 w-2 h-2 bg-green-500 rounded-full" />
         </button>
-        <div className="flex items-center gap-2 ml-2 px-2 py-1 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition cursor-pointer">
-          <Image
-            src={user.avatar}
-            width={32}
-            height={32}
-            alt={user.name}
-            className="w-8 h-8 rounded-full border border-zinc-200 dark:border-zinc-700 object-cover"
-          />
+        <div
+          className="relative flex items-center gap-2 ml-2 px-2 py-1 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition cursor-pointer select-none"
+          onClick={() => setMenuOpen((v) => !v)}
+        >
+          {user?.avatar ? (
+            <Image
+              src={user.avatar}
+              width={32}
+              height={32}
+              alt={user.name}
+              className="w-8 h-8 rounded-full border border-zinc-200 dark:border-zinc-700 object-cover"
+            />
+          ) : (
+            <div className="w-8 h-8 rounded-full flex items-center justify-center bg-[var(--brand-green)] text-[#fffd] font-bold text-[14px] dark:border-zinc-700">
+              {getInitials(user?.name)}
+            </div>
+          )}
           <div className="hidden md:flex flex-col items-start">
             <span className="text-zinc-900 dark:text-zinc-100 text-sm font-medium leading-tight">
-              {user.name}
+              {user?.name || "Usuário"}
             </span>
           </div>
           <FaChevronDown
             className="text-zinc-400 dark:text-zinc-500 ml-1"
             size={14}
           />
+          {/* Dropdown menu */}
+          {menuOpen && (
+            <div className="absolute right-0 top-12 bg-white dark:bg-zinc-900 shadow-xl rounded-lg py-2 w-48 z-50 border border-zinc-200 dark:border-zinc-700 animate-fade-in">
+              <div className="px-4 py-2 text-zinc-700 dark:text-zinc-200 text-sm">
+                {user?.email}
+              </div>
+              <button
+                className="w-full text-left px-4 py-2 text-red-500 hover:bg-red-50 dark:hover:bg-zinc-800 text-sm"
+                onClick={logout}
+              >
+                Sair
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </nav>
