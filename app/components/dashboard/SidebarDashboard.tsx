@@ -69,7 +69,7 @@ export default function SidebarDashboard() {
       {/* Transações */}
       <div>
         <h3 className="font-bold text-lg mb-2 text-zinc-900 dark:text-zinc-100 mt-4">
-          Transactions
+          Transações
         </h3>
         <ul className="flex flex-col gap-1">
           {transactions.slice(0, 6).map((t) => {
@@ -133,7 +133,7 @@ export default function SidebarDashboard() {
       {/* Savings/Metas */}
       <div>
         <h3 className="font-bold text-lg mb-2 text-zinc-900 dark:text-zinc-100 mt-4">
-          Savings
+          Objetivos
         </h3>
         <ul className="flex flex-col gap-3">
           {savings.slice(0, 4).map((s) => {
@@ -177,7 +177,7 @@ export default function SidebarDashboard() {
           })}
         </ul>
         <button className="w-full mt-4 flex items-center justify-center gap-2 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 rounded-lg py-2 font-semibold hover:bg-zinc-800 dark:hover:bg-zinc-200 transition text-sm">
-          <FiPlus /> New goal
+          <FiPlus /> Novo Objetivo
         </button>
       </div>
     </aside>

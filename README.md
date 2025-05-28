@@ -172,3 +172,16 @@ Contributions are welcome! Feel free to open issues and pull requests.
 Este projeto está sob a licença MIT.
 
 This project is under MIT license.
+
+
+
+tasks:
+
+melhorar o grafico e finalizar o dashboard financeiro arrumando todos os widgets de la
+
+adicionar uma mensagem de boas vindas pra cada dashboard
+
+acho q a sidebar pode fazer mais sentido pra cada dash
+
+ter 3 tabs, dashboard financeiro, dashboard da profissao dai fica o nome da profissao e o dashboard pra freelancer ou clt ou pj dependendo doq for a conta
+

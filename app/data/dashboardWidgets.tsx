@@ -35,12 +35,6 @@ export const dashboardWidgetsByProfile: Record<string, DashboardWidget[]> = {
       description: "Veja como seus gastos estão distribuídos por categoria.",
     },
     {
-      id: "recent-transactions",
-      label: "Transações Recentes",
-      icon: <FaListUl size={22} />, // Lista
-      description: "Últimas movimentações da sua conta.",
-    },
-    {
       id: "goals",
       label: "Metas Financeiras",
       icon: <FaBullseye size={22} />, // Barra de progresso

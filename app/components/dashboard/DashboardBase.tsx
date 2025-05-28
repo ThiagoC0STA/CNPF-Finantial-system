@@ -1,7 +1,6 @@
 import React from "react";
 import SummaryWidget from "./widgets/SummaryWidget";
 import CategoriesWidget from "./widgets/CategoriesWidget";
-import RecentTransactionsWidget from "./widgets/RecentTransactionsWidget";
 import GoalsWidget from "./widgets/GoalsWidget";
 import TipsWidget from "./widgets/TipsWidget";
 
@@ -13,9 +12,7 @@ export default function DashboardBase() {
       </div>
 
       <CategoriesWidget />
-      <RecentTransactionsWidget />
       <GoalsWidget />
-      <TipsWidget />
     </div>
   );
 }
