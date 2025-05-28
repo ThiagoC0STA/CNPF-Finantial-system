@@ -55,7 +55,9 @@ export async function POST(req: NextRequest) {
     ]);
 
     if (profileError) {
-      await supabase.auth.admin.deleteUser(authData.user?.id!);
+      if (authData.user?.id) {
+        await supabase.auth.admin.deleteUser(authData.user.id);
+      }
       return NextResponse.json(
         { error: "Erro ao criar perfil do usuário" },
         { status: 500 }

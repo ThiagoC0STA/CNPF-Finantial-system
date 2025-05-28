@@ -97,8 +97,10 @@ export default function Header() {
           <span className="absolute top-1 right-1 w-2 h-2 bg-green-500 rounded-full" />
         </button>
         <div className="flex items-center gap-2 ml-2 px-2 py-1 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition cursor-pointer">
-          <img
+          <Image
             src={user.avatar}
+            width={32}
+            height={32}
             alt={user.name}
             className="w-8 h-8 rounded-full border border-zinc-200 dark:border-zinc-700 object-cover"
           />

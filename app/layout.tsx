@@ -33,7 +33,6 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Thiago Costa" }],
   creator: "Thiago Costa",
-  themeColor: "#16a34a",
   openGraph: {
     title: "CNPF - Controle de Finanças Pessoais",
     description:
@@ -42,13 +41,6 @@ export const metadata: Metadata = {
 
     locale: "pt_BR",
     type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "CNPF - Controle de Finanças Pessoais",
-    description:
-      "Gerencie suas finanças pessoais, defina objetivos e acompanhe seu progresso financeiro de forma simples, visual e segura.",
-    images: ["/og-image.png"],
   },
 };
 
@@ -65,7 +57,11 @@ export default function RootLayout({
         <LoadingProvider>
           <ErrorModalProvider>
             <SuccessModalProvider>
-              <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+              <ThemeProvider
+                attribute="class"
+                defaultTheme="system"
+                enableSystem
+              >
                 {children}
               </ThemeProvider>
             </SuccessModalProvider>
