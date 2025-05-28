@@ -129,7 +129,6 @@ export default function LoginPage() {
         data: { email, password },
       });
       if (res.success) {
-        showSuccess("Login realizado com sucesso!");
         router.push("/");
       } else {
         showError(res.error || "Erro ao fazer login");
