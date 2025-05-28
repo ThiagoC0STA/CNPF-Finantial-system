@@ -5,6 +5,7 @@ import { ThemeProvider } from "./components/theme-provider";
 import LoadingProvider from "./components/LoadingProvider";
 import SuccessModalProvider from "./components/SuccessModalProvider";
 import ErrorModalProvider from "./components/ErrorModalProvider";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -67,6 +68,8 @@ export default function RootLayout({
             </SuccessModalProvider>
           </ErrorModalProvider>
         </LoadingProvider>
+
+        <Analytics />
       </body>
     </html>
   );
