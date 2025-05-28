@@ -1,4 +1,5 @@
 import { Input } from "@/app/components/ui/input";
+import { InputPassword } from "@/app/components/ui/input-password";
 import React from "react";
 
 interface StepPersonalDataProps {
@@ -70,13 +71,13 @@ export default function StepPersonalData({
         >
           Senha
         </label>
-        <Input
+        <InputPassword
           id="password"
-          type="password"
           name="password"
           placeholder="Senha"
           value={formData.password}
           onChange={onChange}
+          error={!!errors.password}
           className={
             errors.password
               ? "bg-zinc-800 text-white border-red-500 focus:border-red-500 focus:ring-red-500 w-full text-base py-2"
@@ -94,13 +95,13 @@ export default function StepPersonalData({
         >
           Confirme sua senha
         </label>
-        <Input
+        <InputPassword
           id="confirmPassword"
-          type="password"
           name="confirmPassword"
           placeholder="Confirme sua senha"
           value={formData.confirmPassword}
           onChange={onChange}
+          error={!!errors.confirmPassword}
           className={
             errors.confirmPassword
               ? "bg-zinc-800 text-white border-red-500 focus:border-red-500 focus:ring-red-500 w-full text-base py-2"

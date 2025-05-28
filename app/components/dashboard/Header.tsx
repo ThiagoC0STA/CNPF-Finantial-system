@@ -11,10 +11,9 @@ import {
   FaComments,
   FaChevronDown,
 } from "react-icons/fa";
-import { motion } from "framer-motion";
 
 const navItems = [
-  { href: "/dashboard", icon: <FaHome size={16} />, label: "Dashboard" },
+  { href: "/", icon: <FaHome size={16} />, label: "Dashboard" },
   {
     href: "/transactions",
     icon: <FaExchangeAlt size={16} />,

@@ -16,6 +16,10 @@ import StepPersonalData from "./steps/StepPersonalData";
 import StepProfile from "./steps/StepProfile";
 import StepGoals from "./steps/StepGoals";
 import StepReview from "./steps/StepReview";
+import { useRequest } from "@/app/lib/request";
+import { useSuccessModal } from "@/app/components/SuccessModalProvider";
+import { useErrorModal } from "@/app/components/ErrorModalProvider";
+import { InputPassword } from "@/app/components/ui/input-password";
 
 const steps = [
   { label: "Dados" },
@@ -26,6 +30,9 @@ const steps = [
 
 export default function LoginPage() {
   const router = useRouter();
+  const { request } = useRequest();
+  const { showSuccess } = useSuccessModal();
+  const { showError } = useErrorModal();
   const [isRegistering, setIsRegistering] = useState(false);
   const [step, setStep] = useState(0);
   const [selectedProfile, setSelectedProfile] = useState("");
@@ -66,7 +73,7 @@ export default function LoginPage() {
     return Object.keys(newErrors).length === 0;
   };
 
-  function handleRegister(e: React.FormEvent) {
+  async function handleRegister(e: React.FormEvent) {
     e.preventDefault();
     if (validateStep()) {
       if (step < steps.length - 1) {
@@ -81,8 +88,54 @@ export default function LoginPage() {
           monthlyIncome: formData.monthlyIncome,
           goals: selectedGoals,
         };
-        console.log("handleRegister", userData);
+        try {
+          const res = await request({
+            method: "POST",
+            url: "/api/register",
+            data: userData,
+          });
+          if (res.success) {
+            showSuccess("Cadastro realizado com sucesso!");
+            setIsRegistering(false);
+            setStep(0);
+            setFormData({
+              name: "",
+              email: "",
+              password: "",
+              confirmPassword: "",
+              monthlyIncome: "",
+            });
+            setSelectedProfile("");
+            setWorkType("");
+            setSelectedGoals([]);
+          } else {
+            showError(res.error || "Erro ao cadastrar");
+          }
+        } catch (err: any) {
+          showError(err?.response?.data?.error || "Erro ao cadastrar");
+        }
       }
+    }
+  }
+
+  async function handleLogin(e: React.FormEvent) {
+    e.preventDefault();
+    const email = (e.currentTarget as any).email?.value;
+    const password = (e.currentTarget as any).password?.value;
+    try {
+      const res = await request({
+        method: "POST",
+        url: "/api/login",
+        data: { email, password },
+      });
+      if (res.success) {
+        showSuccess("Login realizado com sucesso!");
+        router.push("/");
+      } else {
+        showError(res.error || "Erro ao fazer login");
+      }
+    } catch (err: any) {
+      showError(err?.response?.data?.error || "Erro ao fazer login");
     }
   }
 
@@ -108,11 +161,11 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-zinc-900 to-zinc-800 px-2">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-zinc-900 to-zinc-800 px-4 py-4">
       <Card
         className={cn(
           isRegistering
-            ? "w-full max-w-3xl p-4 sm:p-10 rounded-2xl shadow-2xl border-none bg-zinc-900/80 backdrop-blur-md"
+            ? "w-full max-w-3xl px-0 sm:p-10 rounded-2xl shadow-2xl border-none bg-zinc-900/80 backdrop-blur-md"
             : "w-full max-w-md p-4 sm:p-8 rounded-2xl shadow-2xl border-none bg-zinc-900/80 backdrop-blur-md"
         )}
       >
@@ -198,20 +251,15 @@ export default function LoginPage() {
             </>
           ) : (
             // Login Form
-            <form
-              className="flex flex-col gap-3"
-              onSubmit={(e) => {
-                e.preventDefault();
-                router.push("/dashboard");
-              }}
-            >
+            <form className="flex flex-col gap-3" onSubmit={handleLogin}>
               <Input
                 type="email"
+                name="email"
                 placeholder="E-mail"
                 className="bg-zinc-800 text-white border-zinc-700 focus:border-green-400 focus:ring-green-400 w-full text-sm py-2"
               />
-              <Input
-                type="password"
+              <InputPassword
+                name="password"
                 placeholder="Senha"
                 className="bg-zinc-800 text-white border-zinc-700 focus:border-green-400 focus:ring-green-400 w-full text-sm py-2"
               />
