@@ -66,8 +66,8 @@ export default function RootLayout({
                   defaultTheme="system"
                   enableSystem
                 >
-                  {children}
-                </ThemeProvider>
+          {children}
+        </ThemeProvider>
               </SuccessModalProvider>
             </ErrorModalProvider>
           </LoadingProvider>
