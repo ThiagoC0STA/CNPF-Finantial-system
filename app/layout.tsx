@@ -6,7 +6,7 @@ import LoadingProvider from "./components/LoadingProvider";
 import SuccessModalProvider from "./components/SuccessModalProvider";
 import ErrorModalProvider from "./components/ErrorModalProvider";
 import { Analytics } from "@vercel/analytics/next";
-
+import { SpeedInsights } from "@vercel/speed-insights/next";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -70,6 +70,7 @@ export default function RootLayout({
         </LoadingProvider>
 
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
