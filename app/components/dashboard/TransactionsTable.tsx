@@ -14,7 +14,7 @@ export default function TransactionsTable() {
       ? transactions
       : transactions.filter((t) => t.type === filter);
   return (
-    <div className="rounded-2xl bg-white dark:bg-zinc-950 p-6 shadow-xl border border-[#E2F3E8] dark:border-zinc-900 flex flex-col gap-3">
+    <div className="rounded-2xl p-6 shadow-xl border border-[#E2F3E8] dark:border-zinc-900 flex flex-col gap-3">
       <div className="flex items-center justify-between mb-2">
         <span className="text-zinc-900 dark:text-white font-semibold text-base">
           Últimas transações

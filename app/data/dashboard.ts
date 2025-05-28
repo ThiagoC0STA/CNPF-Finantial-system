@@ -12,6 +12,7 @@ export const transactions = [
     category: "Salário",
     type: "income",
     amount: 5000,
+    icon: "https://randomuser.me/api/portraits/men/1.jpg",
   },
   {
     id: 2,
@@ -20,6 +21,7 @@ export const transactions = [
     category: "Alimentação",
     type: "expense",
     amount: 350,
+    icon: "https://randomuser.me/api/portraits/men/1.jpg",
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ export const transactions = [
     category: "Moradia",
     type: "expense",
     amount: 1800,
+    icon: "https://randomuser.me/api/portraits/men/1.jpg",
   },
   {
     id: 4,
@@ -36,6 +39,7 @@ export const transactions = [
     category: "Freelance",
     type: "income",
     amount: 1200,
+    icon: "https://randomuser.me/api/portraits/men/1.jpg",
   },
   {
     id: 5,
@@ -44,6 +48,7 @@ export const transactions = [
     category: "Alimentação",
     type: "expense",
     amount: 120,
+    icon: "https://randomuser.me/api/portraits/men/1.jpg",
   },
   {
     id: 6,
@@ -52,6 +57,7 @@ export const transactions = [
     category: "Transporte",
     type: "expense",
     amount: 80,
+    icon: "https://randomuser.me/api/portraits/men/1.jpg",
   },
 ];
 
