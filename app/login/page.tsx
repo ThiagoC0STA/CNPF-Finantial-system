@@ -134,7 +134,7 @@ export default function LoginPage() {
       if (res.success) {
         setUser(res.user || null);
         showSuccess("Login realizado com sucesso!");
-        setTimeout(() => router.push("/dashboard"), 1000);
+        router.push("/");
       } else {
         showError(res.error || "Erro ao fazer login");
       }

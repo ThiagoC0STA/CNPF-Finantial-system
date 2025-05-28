@@ -7,6 +7,7 @@ import React, {
   useEffect,
 } from "react";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 export interface User {
   id: string;
@@ -33,6 +34,7 @@ export const useUser = () => {
 
 export const UserProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
+  const router = useRouter();
 
   useEffect(() => {
     async function fetchUser() {
@@ -47,7 +49,13 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
     fetchUser();
   }, []);
 
-  const logout = () => setUser(null);
+  const logout = async () => {
+    try {
+      await axios.post("/api/logout");
+    } catch {}
+    setUser(null);
+    router.push("/login");
+  };
 
   return (
     <UserContext.Provider value={{ user, setUser, logout }}>

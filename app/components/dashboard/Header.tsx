@@ -1,6 +1,7 @@
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import { useUser } from "../UserContext";
+import { navLinksByProfile } from "@/app/data/navLinks";
 import {
   FaHome,
   FaExchangeAlt,
@@ -34,6 +35,10 @@ export default function Header() {
   const { theme, setTheme } = useTheme();
   const { user, logout } = useUser();
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const navItems =
+    navLinksByProfile[user?.profile?.toLowerCase() || "default"] ||
+    navLinksByProfile.default;
 
   return (
     <nav className="w-full bg-white dark:bg-[#181818] flex items-center px-6 py-2 min-h-[64px] z-50 border-b border-zinc-200 dark:border-zinc-800">
