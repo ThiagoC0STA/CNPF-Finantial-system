@@ -24,7 +24,7 @@ export default function CategoriesWidget() {
           <svg viewBox="0 0 36 36" className="w-full h-full">
             {
               categorias.reduce(
-                (acc, cat, i) => {
+                (acc, cat) => {
                   const prev = acc.offset;
                   const percent = (cat.value / total) * 100;
                   acc.offset += (percent / 100) * 100;

@@ -3,9 +3,6 @@ import Image from "next/image";
 import { useUser } from "../UserContext";
 import { navLinksByProfile } from "@/app/data/navLinks";
 import {
-  FaHome,
-  FaExchangeAlt,
-  FaBullseye,
   FaSun,
   FaMoon,
   FaBell,
@@ -13,16 +10,6 @@ import {
   FaChevronDown,
 } from "react-icons/fa";
 import { useState } from "react";
-
-const navItems = [
-  { href: "/", icon: <FaHome size={16} />, label: "Dashboard" },
-  {
-    href: "/transactions",
-    icon: <FaExchangeAlt size={16} />,
-    label: "Transações",
-  },
-  { href: "/goals", icon: <FaBullseye size={16} />, label: "Metas" },
-];
 
 function getInitials(name?: string | null) {
   if (!name) return "?";
